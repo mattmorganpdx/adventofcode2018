@@ -1,4 +1,5 @@
 from collections import defaultdict
+from shared.utils import increment_dict_value
 
 
 def calibrate(inputs, frequency=0):
@@ -15,8 +16,3 @@ def calibrate(inputs, frequency=0):
         if first_total is None:
             first_total = frequency
     return first_total, first_repeat
-
-
-def increment_dict_value(frequency_counts, frequency):
-    frequency_counts[frequency] = frequency_counts[frequency] + 1
-    return frequency_counts

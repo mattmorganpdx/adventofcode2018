@@ -1,4 +1,5 @@
 from unittest import TestCase
+from shared.utils import load_input
 from .day01 import calibrate
 
 
@@ -9,15 +10,7 @@ class TestCalibrate(TestCase):
         self.assertEqual(3, frequency)
 
     def test_calibrate_input(self):
-        test_array = load_input()
+        test_array = load_input('day01/input')
         frequency, first_repeat = calibrate(test_array)
         self.assertEqual(454, frequency)
         self.assertEqual(566, first_repeat)
-
-
-def load_input():
-    lines = list()
-    with open('day01/input', "r") as f:
-        for line in f.readlines():
-            lines.append(line.strip())
-    return lines
